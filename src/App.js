@@ -7,12 +7,12 @@ import Footer from './footer';
 class App extends Component {
   render() {
     return (
-      <div style={{flexGrow:1}} spacing={24}>
+      <div style={{flexGrow:1}}>
 
   
         <Grid container justify="center"  alignItems="flex-end">
-          <Grid item xs={8}>
-          <Navigation item xs={12} />
+          <Grid item xl ={8} sm={12}>
+          <Navigation item xs={12}   />
           </Grid>
           <Grid item xs={8}>
             <Main  item xs={12} />

@@ -1,27 +1,28 @@
 import React from 'react';
-import { AppBar, Paper, Tabs, Tab } from '@material-ui/core';
+import { AppBar,Paper, Tabs, Tab } from '@material-ui/core';
 class Navigation extends React.Component {
+
     state = {
-        value: 1,
+        select: 0,
     };
-    handleChange(event, value) {
-        console.log(value)
-        this.setState({value});
-    }
+    handleChange = (event, value) => {
+        this.setState({ select:value });
+        console.log(this)
+      };
     render() {
-        return (<div>
-            <AppBar position="static" >
-                <Tabs indicatorColor="secondary"
+        return (
+            <AppBar position="static"  >
+                <Tabs 
                     onChange={this.handleChange}
-                    value={this.state.value}
-                    textColor="secondary"
-                    centered>
+                    value={this.state.select}
+                    centered
+                    >
                     <Tab label="Item One" />
-                    <Tab label="Item One1" selected/>
+                    <Tab label="Item One1" />
                     <Tab label="Item One2"/>
                 </Tabs>
             </AppBar>
-        </div>)
+        )
     }
 }
 
