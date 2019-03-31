@@ -1,16 +1,17 @@
 import React from 'react'
 import { Card, CardContent, Button, CardActions, Typography } from '@material-ui/core'
 import axios from './Http'
+import {Link} from 'react-router-dom'
 const styles = {
     card: {
         // background: "#555",
-        margin: 10,
+        marginTop: 10,
 
     }
 }
 
 
-class Main extends React.Component {
+class HomePage extends React.Component {
 
     constructor() {
         super();
@@ -22,8 +23,8 @@ class Main extends React.Component {
 
 
     getData = () => {
-        axios.post(
-            '/article/list'
+        axios.get(
+            '/article/all'
         ).then(res => {
             this.setState({
                 "articleList": res.data
@@ -53,7 +54,7 @@ class Main extends React.Component {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small"> More</Button>
+                            <Button size="small" component={Link} to={`/detail/${value.id}`} > More</Button>
                         </CardActions>
                     </Card>);
                 }
@@ -63,4 +64,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main;
+export default HomePage

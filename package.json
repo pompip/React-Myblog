@@ -9,7 +9,10 @@
     "markdown-to-jsx": "^6.9.3",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8"
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "showdown": "^1.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,5 +29,4 @@
     "not ie <= 11",
     "not op_mini all"
   ]
-
 }

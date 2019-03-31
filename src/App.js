@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
-import Navigation from './Navigation';
-import Main from './main';
 import { Grid } from '@material-ui/core'
-import Footer from './footer';
+import { BrowserRouter, Route } from 'react-router-dom'
+
+
+import Navigation from './Navigation';
+
+
+import Side from './Side'
+import HomePage from './HomePage'
+import Detail from './Detail'
+
+import './App.css'
+
+
 
 class App extends Component {
   render() {
     return (
-      <div style={{flexGrow:1}}>
-
-  
-        <Grid container justify="center"  alignItems="flex-end">
-          <Grid item xl ={8} sm={12}>
-          <Navigation item xs={12}   />
+      <BrowserRouter >
+        <Navigation />
+        <Grid container className={'content'}>
+          <Grid sm={2} item></Grid>
+          <Grid item sm={6}>
+            <Route path="/detail/:id" component={Detail} />
+            <Route path="/main" component={HomePage} />
+            <Route exact path='/' component={HomePage} />
           </Grid>
-          <Grid item xs={8}>
-            <Main  item xs={12} />
-          </Grid>
-          <Grid item xs={8} >
-          <Footer />
+          <Grid item sm={2}>
+            <Side />
           </Grid>
         </Grid>
-     
-       </div>
+
+      </BrowserRouter>
     );
   }
 }
