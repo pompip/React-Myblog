@@ -1,6 +1,7 @@
 import React from 'react'
 import Http from './Http';
 import { Card, CardContent } from '@material-ui/core';
+import MarkdownParser from './MarkdownParser';
 
 class Detail extends React.Component{
 
@@ -30,8 +31,7 @@ class Detail extends React.Component{
             <CardContent >
                 <h3 >{article.title}</h3>
                 <div >{article.updateTimestamp}</div>
-                <div  >{article.content}</div>
-                <div>hello world</div>
+                <MarkdownParser content ={article.content}/>
             </CardContent>
         </Card >
     )

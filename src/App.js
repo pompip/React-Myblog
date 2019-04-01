@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 
 import Navigation from './Navigation';
+import MarkdownEditer from './MarkdownEditer'
 
 
 import Side from './Side'
@@ -25,8 +26,9 @@ class App extends Component {
             <Route path="/detail/:id" component={Detail} />
             <Route path="/main" component={HomePage} />
             <Route exact path='/' component={HomePage} />
+            <Route path='/markdown' component={MarkdownEditer} />
           </Grid>
-          <Grid item sm={2}>
+          <Grid item sm={2} style={{marginLeft:10}}>
             <Side />
           </Grid>
         </Grid>

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default  axios.create({
-    baseURL: "http://localhost/api",
+    baseURL: "http://java.asuscomm.com:9000/api",
     timeout: 5000,
-    headers: {}
+   
 })

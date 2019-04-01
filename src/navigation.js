@@ -46,6 +46,7 @@ class Navigation extends React.Component {
                         我的博客
                     </Typography>
                     <Typography className={classes.typography} variant="h6" color='inherit' component={Link} to="/">主页</Typography>
+                    <Typography className={classes.typography} variant="h6" color='inherit' component={Link} to="/markdown">新建</Typography>
                     <Typography className={classes.typography} color='inherit' variant="h6" component={Link} to="/detail">关于</Typography>
                     <Typography className={classes.typography} variant="h6"
                         aria-owns={open ? 'menu-appbar' : undefined}
