@@ -1,7 +1,8 @@
 import React from 'react'
 import { Card, CardContent, Button, CardActions, Typography } from '@material-ui/core'
 import axios from './Http'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Pagination from './Pagination'
 const styles = {
     card: {
         // background: "#555",
@@ -15,31 +16,37 @@ class HomePage extends React.Component {
 
     constructor() {
         super();
-        this.getData();
+        this.getData(0);
         this.state = {
-            articleList: []
+            articleList: [],
+            total:0,
+            current:0,
         }
     }
 
 
-    getData = () => {
-        axios.get(
-            '/article/all'
-        ).then(res => {
+    getData = (pageNum) => {
+        axios.get("/article/page/"+pageNum)
+        .then(res => {
             this.setState({
-                "articleList": res.data
+                articleList: res.data.content,
+                total : res.data.total,
+                current:res.data.current,
             })
         }).catch(err => {
             alert(err)
         });
     }
 
+    handleOnClick =(pageNum)=>{
+        this.getData(pageNum)
+    }
     render() {
         return (<div>
             {this.state.articleList.map(
                 (value, index) => {
-                    return (<Card style={styles.card} key={index}>
-
+                    return (
+                    <Card style={styles.card} key={index}>
                         <CardContent>
                             <Typography color="textSecondary" gutterBottom>
                             </Typography>
@@ -59,6 +66,7 @@ class HomePage extends React.Component {
                     </Card>);
                 }
             )}
+            <Pagination num={this.state.total} current={this.state.current} handleOnClick = {this.handleOnClick} />
 
         </div>)
     }

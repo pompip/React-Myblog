@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import { Grid } from '@material-ui/core'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-
 import Navigation from './Navigation';
 import MarkdownEditer from './MarkdownEditer'
-
-
 import Side from './Side'
 import HomePage from './HomePage'
 import Detail from './Detail'
 
 import './App.css'
+import Footer from './Footer';
 
 
 
@@ -31,8 +29,9 @@ class App extends Component {
           <Grid item sm={2} style={{marginLeft:10}}>
             <Side />
           </Grid>
+      
         </Grid>
-
+        <Footer />
       </BrowserRouter>
     );
   }

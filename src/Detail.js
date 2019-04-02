@@ -16,7 +16,7 @@ class Detail extends React.Component{
 }
 
  getData= (id)=>{
-    Http.get("/article/"+id).then(res=>{
+    Http.get("/article/detail/"+id).then(res=>{
         this.setState({article:res.data})
     }).catch(err=>{
         console.log(err)
@@ -24,7 +24,6 @@ class Detail extends React.Component{
 };
 
  render() {
-   
     const article = this.state.article;
     return (
         <Card>

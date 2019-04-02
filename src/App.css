@@ -23,12 +23,17 @@
   color: #61dafb;
 }
 .nav{
-  height: 4em;
+  height: 3em;
 }
 .content{
-  margin-top: 4em
+  margin-top: 3em;
+  width:100%;
 }
-
+.button{
+  outline-style:auto;
+  width: 30px;
+  height:  20px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
