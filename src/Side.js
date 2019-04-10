@@ -1,13 +1,17 @@
 import React from 'react'
-import { Paper, Avatar, Typography, Link, Card, CardContent } from '@material-ui/core';
+import { Avatar, Typography, Link, Card, CardContent } from '@material-ui/core';
 
 const libName = ["showdown.js", "bootstrap4", "jquery"]
+const sideStyle ={
+    position:"sticky",
+    top:"3em"
+}
 
 function Side(props) {
     const avatarSrc = "http://java.asuscomm.com:9000/api/static/img/zxq.jpg"
     const githubSrc = "https://guides.github.com/features/mastering-markdown/"
     return (
-        <Card>
+        <Card style ={sideStyle}>
             <CardContent>
                 <Avatar src={avatarSrc} />
                 <div style={{flow:"left"}}>

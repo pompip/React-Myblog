@@ -10,6 +10,7 @@ import Detail from './Detail'
 
 import './App.css'
 import Footer from './Footer';
+import Game from './Game'
 
 
 
@@ -19,10 +20,10 @@ class App extends Component {
       <BrowserRouter >
         <Navigation />
         <Grid container className={'content'}>
-          <Grid sm={2} item></Grid>
+          <Grid sm={2} item></Grid> 
           <Grid item sm={6}>
             <Route path="/detail/:id" component={Detail} />
-            <Route path="/main" component={HomePage} />
+            <Route path="/game" component={Game} />
             <Route exact path='/' component={HomePage} />
             <Route path='/markdown' component={MarkdownEditer} />
           </Grid>
