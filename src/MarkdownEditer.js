@@ -1,7 +1,7 @@
 import React from 'react'
-import { TextField, Paper, IconButton, Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@material-ui/core';
 import MarkdownParser from './MarkdownParser';
 import Http from './Http';
+import {Button,Input,Modal } from 'antd'
 
 class MarkdownEditer extends React.Component {
 
@@ -44,26 +44,31 @@ class MarkdownEditer extends React.Component {
             });
     }
     render() {
-
+        const {TextArea} = Input;
         return (
-            <Paper>
+            <div>
                 <div >
                     
                     <Button onClick={this.handleButtonClick}>预览</Button>
                     <Button onClick={this.saveMarkdown}>保存</Button>
                 </div>
-                <TextField multiline variant="outlined" rows="30" style={this.styles} onChange={this.handleTextChange}></TextField>
-                <Dialog scroll="paper" fullWidth open={this.state.open} onClose={this.handleDialogClose}>
-                    <DialogTitle>预览:</DialogTitle>
-                    <DialogContent>
-                        <DialogContentText><MarkdownParser content={this.state.inputContent} /></DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={this.handleSaveClick}>保存</Button>
-                        <Button onClick={this.handleDialogClose}>取消</Button>
-                    </DialogActions>
-                </Dialog>
-            </Paper>
+                <TextArea multiline variant="outlined" rows="30" style={this.styles} onChange={this.handleTextChange}></TextArea>
+                <Modal scroll="paper" 
+                fullWidth 
+                visible={this.state.open} 
+                onClose={this.handleDialogClose}
+                title={'预览:'}
+                footer={[
+                    <Button onClick={this.handleSaveClick}>保存</Button>,
+                    <Button onClick={this.handleDialogClose}>取消</Button>
+                ]}
+                >
+                    <MarkdownParser content={this.state.inputContent} />
+                    
+                  
+           
+                </Modal>
+            </div>
         )
     }
 }

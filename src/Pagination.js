@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, RootRef } from '@material-ui/core';
+import { Button  } from 'antd';
 
 const Pagination =(props)=>{
     let arr = [];
@@ -9,15 +9,16 @@ const Pagination =(props)=>{
 
 
     return(
-        <RootRef>
-            <div style={{marginTop:10}}></div>
+    
+            <div style={{marginTop:10}}>
         
         {
             arr.map((item,index)=>{
                 return (<Button color="primary" variant={props.current===index?"contained":"outlined"} key={index} onClick={()=>{props.handleOnClick(index)}}>{item+1}</Button>);
             })
         }
-        </RootRef >
+        </div>
+  
     )
 }
 export default Pagination;

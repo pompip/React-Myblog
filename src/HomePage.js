@@ -1,12 +1,15 @@
 import React from 'react'
-import { Card, CardContent, Button, CardActions, Typography } from '@material-ui/core'
 import axios from './Http'
 import { Link } from 'react-router-dom'
 import Pagination from './Pagination'
+
+import { Card, Typography, Button } from 'antd'
 const styles = {
     card: {
         // background: "#555",
-        marginTop: 10,
+        // margin: 20,
+        // padding:10,
+        // maxWidth:1000,
 
     }
 }
@@ -49,22 +52,16 @@ class HomePage extends React.Component {
                 (value, index) => {
                     return (
                         <Card style={styles.card} key={index}>
-                            <CardContent>
-                                <Typography color="textSecondary" gutterBottom>
-                                </Typography>
-                                <Typography variant="h5" component="h2">
-                                    {value.title}
-                                </Typography>
-                                <Typography color="textSecondary">
-                                    {value.createTimestamp}
-                                </Typography>
-                                <Typography component="p">
-                                    {value.content}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small" component={Link} to={`/detail/${value.id}`} > More</Button>
-                            </CardActions>
+                            <Typography variant="h5" component="h2">
+                                {value.title}
+                            </Typography>
+                            <Typography color="textSecondary">
+                                {value.createTimestamp}
+                            </Typography>
+                            <Typography component="p">
+                                {value.content}
+                            </Typography>
+                            <Link to={`/detail/${value.id}`} > <Button type="dashed" > More</Button></Link>
                         </Card>);
                 }
             )}

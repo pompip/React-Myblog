@@ -1,6 +1,7 @@
 import React from 'react'
-import { Avatar, Typography, Link, Card, CardContent } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
+import {Card,Typography,Avatar} from 'antd'
 const libName = ["showdown.js", "bootstrap4", "jquery"]
 const sideStyle ={
     position:"sticky",
@@ -12,7 +13,7 @@ function Side(props) {
     const githubSrc = "https://guides.github.com/features/mastering-markdown/"
     return (
         <Card style ={sideStyle}>
-            <CardContent>
+            <div>
                 <Avatar src={avatarSrc} />
                 <div style={{flow:"left"}}>
                     <Typography variant="h5">关于我...</Typography>
@@ -28,7 +29,7 @@ function Side(props) {
                 {libName.map((item, index) => {
                     return (<Typography variant="body1" key={index}>{item}</Typography>)
                 })}
-            </CardContent>
+            </div>
         </Card>
     );
 }
