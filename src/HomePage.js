@@ -2,6 +2,7 @@ import React from 'react'
 import axios from './Http'
 import { Link } from 'react-router-dom'
 import Pagination from './Pagination'
+import {connect} from 'react-redux'
 
 import { Card, Typography, Button } from 'antd'
 const styles = {
@@ -20,7 +21,7 @@ class HomePage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.getData(0);
+    
         this.state = {
             articleList: [],
             total: 0,
@@ -69,6 +70,15 @@ class HomePage extends React.Component {
 
         </div>)
     }
+    componentDidMount(){
+        console.log("componentDidMount")
+        this.getData(0);
+    }
+    componentWillMount(){
+        console.log("componentWillMount")
+    }
 }
 
-export default HomePage
+
+
+export default connect(null,null)(HomePage);
