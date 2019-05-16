@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
 import {Card,Typography,Avatar} from 'antd'
 const libName = ["showdown.js", "bootstrap4", "jquery"]
@@ -8,7 +7,7 @@ const sideStyle ={
     top:"3em"
 }
 
-function Side(props) {
+export default  (props)=> {
     const avatarSrc = "http://java.asuscomm.com:9000/api/static/img/zxq.jpg"
     const githubSrc = "https://guides.github.com/features/mastering-markdown/"
     return (
@@ -22,7 +21,7 @@ function Side(props) {
                     作为程序员，最值得夸赞的成就是取到现在的老婆</Typography>
                 </div>
                 <Typography variant="h5">一些链接</Typography>
-                <Typography variant="body1"><Link href={githubSrc}>GitHub Flavored Markdown</Link></Typography>
+                <Typography variant="body1"><a href={githubSrc}>GitHub Flavored Markdown</a></Typography>
 
                 <Typography variant="h5">开源库</Typography>
 
@@ -33,5 +32,3 @@ function Side(props) {
         </Card>
     );
 }
-
-export default Side;

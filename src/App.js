@@ -32,7 +32,7 @@ class App extends Component {
                 <Navigation />
               </Header>
               <Content>
-                <Route path="/detail/:id" component={Detail} />
+              <Route path="/detail/:id" component={Detail} />
                 <Route path="/game" component={Game} />
                 <Route exact path='/' component={HomePage} />
                 <Route path='/markdown' component={MarkdownEditer} />
